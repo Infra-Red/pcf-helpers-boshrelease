@@ -1,0 +1,10 @@
+#!/usr/bin/env bash
+
+JOB_DIR=/var/vcap/jobs/bosh-dns-enable
+
+source ${JOB_DIR}/bin/prepend-nameserver.sh
+
+# If a command fails, exit immediately
+set -e
+
+prepend_nameserver "/etc/resolv.conf"
