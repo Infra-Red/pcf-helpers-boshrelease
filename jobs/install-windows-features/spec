@@ -1,0 +1,14 @@
+---
+name: install-windows-features
+
+templates:
+  pre-start.ps1.erb: bin/pre-start.ps1
+
+packages: []
+
+properties:
+  windows_features:
+    description: "Windows features Array (see below for details)"
+    example: |
+      windows_features.name: String containing the name of the Windows feature
+      windows_features.options: Array containing the additional parameters of the Windows feature

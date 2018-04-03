@@ -1,0 +1,6 @@
+$ErrorActionPreference = "Stop";
+trap { $host.SetShouldExit(1) }
+
+<% p('windows_features', []).each do |feature| %>
+Install-WindowsFeature -Name <%= feature['name'] %> <%= Array(feature['options']).join(' ') %>
+<% end %>
